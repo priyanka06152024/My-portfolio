@@ -1,13 +1,16 @@
 import { useState } from "react";
 
 const skills = [
+  "Html",
+  "Css",
   "React",
   "JavaScript",
+  "C++",
+  "C",
   "Tailwind CSS",
   "GSAP",
   "Three.js",
   "React Three Fiber",
-  "Lenis",
   "Git / GitHub",
 ];
 
