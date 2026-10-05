@@ -1,10 +1,12 @@
-import { useParams, Link } from "react-router-dom";
+
+import { useParams, useNavigate, Link } from "react-router-dom";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 
 import { projects } from "../data/projects";
 
 function ProjectDetails() {
   const { slug } = useParams();
+  const navigate = useNavigate();
 
   const project = projects.find((item) => item.slug === slug);
 
@@ -23,20 +25,16 @@ function ProjectDetails() {
   }
 
   return (
-    <div className="bg-[#111] text-[#F4F1EA] min-h-screen">
+    <div className="page-dark bg-[#111] text-[#F4F1EA] min-h-screen">
       <section className="min-h-screen flex items-end pb-[10vh]">
         <div className="container">
-          <Link
-            to="/projects"
-            className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.15em] text-white/40 mb-16"
+          <button
+            onClick={() => navigate("/projects")}
+            className="relative z-50 inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.15em] text-white/40 mb-16 cursor-pointer"
           >
             <ArrowLeft size={13} />
             Back to work
-          </Link>
-
-          <span className="section-label text-white/40 block">
-            {project.id} / {project.year}
-          </span>
+          </button>
 
           <h1 className="display-font text-[clamp(75px,15vw,220px)] font-semibold tracking-[-0.1em] leading-[0.7] mt-6">
             {project.title}
@@ -50,25 +48,29 @@ function ProjectDetails() {
       </section>
 
       <section className="container pb-[15vh]">
-        <div className="aspect-video bg-[#1d1d1d] overflow-hidden">
+        <a
+          href={project.liveUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group block aspect-video bg-[#1d1d1d] overflow-hidden"
+          data-cursor="VIEW"
+        >
           {project.image ? (
             <img
               src={project.image}
               alt={project.title}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700"
             />
           ) : (
             <div className="h-full flex items-center justify-center text-5xl text-white/20">
               {project.title}
             </div>
           )}
-        </div>
+        </a>
 
         <div className="grid md:grid-cols-3 gap-10 mt-16 border-t border-white/15 pt-10">
           <div>
-            <span className="section-label text-white/30">
-              Category
-            </span>
+            <span className="section-label text-white/30">Category</span>
 
             <p className="mt-4">{project.category}</p>
           </div>
@@ -91,9 +93,7 @@ function ProjectDetails() {
           </div>
 
           <div>
-            <span className="section-label text-white/30">
-              Year
-            </span>
+            <span className="section-label text-white/30">Year</span>
 
             <p className="mt-4">{project.year}</p>
           </div>

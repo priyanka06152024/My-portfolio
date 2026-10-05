@@ -3,8 +3,10 @@ import { ArrowUpRight } from "lucide-react";
 
 function ProjectCard({ project, index }) {
   return (
-    <Link
-      to={`/projects/${project.slug}`}
+    <a
+      href={project.liveUrl}
+      target="_blank"
+      rel="noopener noreferrer"
       className={`group block ${
         index % 2 !== 0 ? "md:translate-y-32" : ""
       }`}
@@ -43,7 +45,7 @@ function ProjectCard({ project, index }) {
           {project.category}
         </span>
       </div>
-    </Link>
+    </a>
   );
 }
 
