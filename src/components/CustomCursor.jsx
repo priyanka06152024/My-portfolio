@@ -1,3 +1,4 @@
+
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 
@@ -55,7 +56,23 @@ function CustomCursor() {
       });
     };
 
+    // DARK SECTION CURSOR
+    const updateCursorColor = (e) => {
+      const element = document.elementFromPoint(e.clientX, e.clientY);
+
+      const isDark = element?.closest(
+        ".dark-section, .page-dark"
+      );
+
+      if (isDark) {
+        cursor.style.backgroundColor = "#ffffff";
+      } else {
+        cursor.style.backgroundColor = "#111111";
+      }
+    };
+
     window.addEventListener("mousemove", moveCursor);
+    window.addEventListener("mousemove", updateCursorColor);
 
     const elements = document.querySelectorAll("[data-cursor]");
 
@@ -66,6 +83,7 @@ function CustomCursor() {
 
     return () => {
       window.removeEventListener("mousemove", moveCursor);
+      window.removeEventListener("mousemove", updateCursorColor);
 
       elements.forEach((element) => {
         element.removeEventListener("mouseenter", enterInteractive);
