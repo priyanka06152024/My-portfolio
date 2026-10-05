@@ -1,4 +1,6 @@
+
 import { useLayoutEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import gsap from "gsap";
 import { ArrowDown } from "lucide-react";
 
@@ -9,6 +11,8 @@ function Hero() {
   const sectionRef = useRef(null);
   const titleRef = useRef(null);
   const subRef = useRef(null);
+
+  const navigate = useNavigate();
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -54,6 +58,7 @@ function Hero() {
         <div className="relative z-20 w-full pt-20">
           <div className="hero-meta flex items-center gap-3 mb-10">
             <span className="lime-dot" />
+
             <span className="section-label">
               Frontend / Creative Developer
             </span>
@@ -82,7 +87,9 @@ function Hero() {
               motion and creative technology meet.
             </p>
 
-            <MagneticButton>Explore my work</MagneticButton>
+            <MagneticButton onClick={() => navigate("/projects")}>
+              Explore my work
+            </MagneticButton>
           </div>
         </div>
 
@@ -104,3 +111,4 @@ function Hero() {
 }
 
 export default Hero;
+
