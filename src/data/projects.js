@@ -28,7 +28,7 @@ export const projects = [
     tech: ["React", "GSAP", "ScrollTrigger", "Lenis"],
     image: k72,
 
-    liveUrl: "https://coca-cola-interactive-landing-page.vercel.app/",
+    liveUrl: "https://k72agence-gzex.vercel.app/",
   },
 
   {
