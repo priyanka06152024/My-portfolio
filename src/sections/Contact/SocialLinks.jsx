@@ -1,15 +1,12 @@
 const links = [
   {
     name: "GitHub",
-    url: "https://github.com/",
+    url: "https://github.com/priyanka06152024",
   },
+  
   {
-    name: "LinkedIn",
-    url: "https://linkedin.com/",
-  },
-  {
-    name: "Instagram",
-    url: "https://instagram.com/",
+    name: "Gmail",
+    url: "https://mail.google.com/mail/u/0/#inbox",
   },
 ];
 
