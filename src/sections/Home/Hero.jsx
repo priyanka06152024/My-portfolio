@@ -52,9 +52,9 @@ function Hero() {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-screen bg-[#F4F1EA] overflow-hidden"
+      className="relative min-h-screen bg-[#F4F1EA] overflow-hidden "
     >
-      <div className="container min-h-screen relative flex items-center">
+     <div className="container min-h-screen relative flex flex-col md:flex-row items-center">
         <div className="relative z-20 w-full pt-24 pb-24 sm:pt-20">
           <div className="hero-meta flex items-center gap-3 mb-7 sm:mb-10">
             <span className="lime-dot" />
