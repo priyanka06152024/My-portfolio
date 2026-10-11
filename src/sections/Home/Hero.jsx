@@ -55,8 +55,8 @@ function Hero() {
       className="relative min-h-screen bg-[#F4F1EA] overflow-hidden"
     >
       <div className="container min-h-screen relative flex items-center">
-        <div className="relative z-20 w-full pt-20">
-          <div className="hero-meta flex items-center gap-3 mb-10">
+        <div className="relative z-20 w-full pt-24 pb-24 sm:pt-20">
+          <div className="hero-meta flex items-center gap-3 mb-7 sm:mb-10">
             <span className="lime-dot" />
 
             <span className="section-label">
@@ -64,46 +64,48 @@ function Hero() {
             </span>
           </div>
 
-          <div ref={titleRef}>
+          <div ref={titleRef} className="relative z-20">
             <div className="overflow-hidden">
-              <h1 className="hero-line display-font text-[clamp(70px,13vw,210px)] font-semibold tracking-[-0.09em] leading-[0.72]">
+              <h1 className="hero-line display-font text-[clamp(43px,10.5vw,210px)] sm:text-[clamp(70px,13vw,210px)] font-semibold tracking-[-0.08em] sm:tracking-[-0.09em] leading-[0.82] sm:leading-[0.72] whitespace-nowrap">
                 PRIYANKA
               </h1>
             </div>
 
-            <div className="overflow-hidden ml-[8vw]">
-              <h1 className="hero-line display-font text-[clamp(70px,13vw,210px)] font-semibold tracking-[-0.09em] leading-[0.8]">
+            <div className="overflow-hidden ml-[4vw] sm:ml-[8vw]">
+              <h1 className="hero-line display-font text-[clamp(43px,10.5vw,210px)] sm:text-[clamp(70px,13vw,210px)] font-semibold tracking-[-0.08em] sm:tracking-[-0.09em] leading-[0.85] sm:leading-[0.8] whitespace-nowrap">
                 CHAUHAN<span className="text-[#D7FF3F]">.</span>
               </h1>
             </div>
           </div>
 
-          <div className="mt-14 flex flex-col md:flex-row md:items-end justify-between gap-8">
+          <div className="mt-8 sm:mt-14 flex flex-col md:flex-row md:items-end justify-between gap-6 sm:gap-8">
             <p
               ref={subRef}
-              className="max-w-[430px] text-[15px] md:text-[17px] leading-[1.5] text-black/60"
+              className="max-w-[430px] text-[14px] sm:text-[15px] md:text-[17px] leading-[1.6] text-black/60"
             >
               I build immersive digital experiences where clean interfaces,
               motion and creative technology meet.
             </p>
 
-            <MagneticButton onClick={() => navigate("/projects")}>
-              Explore my work
-            </MagneticButton>
+            <div className="self-start md:self-auto">
+              <MagneticButton onClick={() => navigate("/projects")}>
+                Explore my work
+              </MagneticButton>
+            </div>
           </div>
         </div>
 
-        <div className="absolute right-[-8%] top-[15%] w-[55vw] h-[65vh] max-w-[800px] z-10 pointer-events-none">
+        <div className="absolute right-[-18%] top-[12%] w-[90vw] h-[42vh] sm:right-[-8%] sm:top-[15%] sm:w-[55vw] sm:h-[65vh] max-w-[800px] z-10 pointer-events-none opacity-40 sm:opacity-100">
           <HeroScene />
         </div>
       </div>
 
-      <div className="absolute bottom-8 left-[4%] flex items-center gap-3 text-[9px] uppercase tracking-[0.2em]">
+      <div className="absolute bottom-5 left-[4%] flex items-center gap-2 sm:gap-3 text-[8px] sm:text-[9px] uppercase tracking-[0.15em] sm:tracking-[0.2em]">
         <ArrowDown size={13} />
         Scroll to explore
       </div>
 
-      <div className="absolute bottom-8 right-[4%] text-[9px] uppercase tracking-[0.2em] text-black/40">
+      <div className="absolute bottom-5 right-[4%] text-[8px] sm:text-[9px] uppercase tracking-[0.15em] sm:tracking-[0.2em] text-black/40">
         Based in India
       </div>
     </section>
