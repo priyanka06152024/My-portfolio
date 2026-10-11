@@ -1,9 +1,9 @@
+
 const links = [
   {
     name: "GitHub",
     url: "https://github.com/priyanka06152024",
   },
-  
   {
     name: "Gmail",
     url: "https://mail.google.com/mail/u/0/#inbox",
@@ -12,7 +12,7 @@ const links = [
 
 function SocialLinks() {
   return (
-    <section className="bg-[#111] text-[#F4F1EA] py-[10vh]">
+    <section className="bg-[#111] text-[#F4F1EA] py-[7vh] sm:py-[10vh]">
       <div className="container">
         {links.map((link, index) => (
           <a
@@ -20,26 +20,26 @@ function SocialLinks() {
             href={link.url}
             target="_blank"
             rel="noreferrer"
-            className="flex items-center justify-between border-t border-white/15 py-6 group"
+            className="flex items-center justify-between gap-3 border-t border-white/15 py-5 sm:py-6 group"
             data-cursor="OPEN"
           >
-            <div className="flex gap-5 items-center">
-              <span className="text-[10px] text-white/30">
+            <div className="flex gap-3 sm:gap-5 items-center min-w-0">
+              <span className="text-[10px] text-white/30 shrink-0">
                 0{index + 1}
               </span>
 
-              <span className="display-font text-[clamp(35px,6vw,80px)] tracking-[-0.06em] group-hover:text-[#D7FF3F] transition-colors">
+              <span className="display-font text-[clamp(30px,6vw,80px)] tracking-[-0.05em] sm:tracking-[-0.06em] group-hover:text-[#D7FF3F] transition-colors">
                 {link.name}
               </span>
             </div>
 
-            <span className="text-2xl group-hover:rotate-45 transition-transform">
+            <span className="text-xl sm:text-2xl shrink-0 group-hover:rotate-45 transition-transform">
               ↗
             </span>
           </a>
         ))}
 
-        <div className="border-t border-white/15 mt-20 pt-6 flex justify-between text-[9px] uppercase tracking-[0.15em] text-white/30">
+        <div className="border-t border-white/15 mt-12 sm:mt-20 pt-6 flex flex-col gap-3 sm:flex-row sm:justify-between sm:items-center text-[9px] uppercase tracking-[0.15em] text-white/30">
           <span>Priyanka Chauhan</span>
           <span>© 2026</span>
         </div>
@@ -49,3 +49,4 @@ function SocialLinks() {
 }
 
 export default SocialLinks;
+
