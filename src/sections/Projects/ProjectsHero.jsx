@@ -6,7 +6,7 @@ function ProjectsHero() {
            Selected work
         </span>
 
-        <h1 className="display-font text-[clamp(70px,14vw,210px)] font-semibold tracking-[-0.1em] leading-[0.72] mt-8">
+        <h1 className="display-font text-[clamp(70px,14vw,210px)] font-semibold tracking-[-0.1em] leading-[0.72] mt-8 sm:mt-2">
           PROJECTS<span className="text-[#D7FF3F]">.</span>
         </h1>
 
