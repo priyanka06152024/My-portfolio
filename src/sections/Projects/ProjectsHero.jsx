@@ -1,6 +1,6 @@
 function ProjectsHero() {
   return (
-    <section className="min-h-screen flex items-end pb-[12vh]">
+    <section className="min-h-screen flex items-end pb-[12vh]sm:pb-[2vh]">
       <div className="container">
         <span className="section-label text-white/40">
            Selected work
